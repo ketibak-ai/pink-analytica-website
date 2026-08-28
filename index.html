@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keti Bakiri</title>
+<meta name="description" content="Product management portfolio for Keti Bakiri, a credit and pricing SME with 20+ years in financial services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #eef1ec;
+    --surface: #e4e9e2;
+    --surface-2: #dbe1d8;
+    --ink: #151b17;
+    --ink-soft: #4a544c;
+    --ink-faint: #7c877e;
+    --line: rgba(21,27,23,0.14);
+    --line-strong: rgba(21,27,23,0.28);
+    --accent: #1f6f5c;
+    --accent-strong: #14503f;
+    --accent-2: #a9701f;
+    --accent-2-strong: #7d5314;
+    --shadow: 0 1px 2px rgba(21,27,23,0.06);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #101512;
+      --surface: #171e19;
+      --surface-2: #1e2721;
+      --ink: #e9ede8;
+      --ink-soft: #b3bdb2;
+      --ink-faint: #7f8c82;
+      --line: rgba(233,237,232,0.14);
+      --line-strong: rgba(233,237,232,0.26);
+      --accent: #4bb597;
+      --accent-strong: #7fd0b6;
+      --accent-2: #d9a252;
+      --accent-2-strong: #ecc17c;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #101512;
+    --surface: #171e19;
+    --surface-2: #1e2721;
+    --ink: #e9ede8;
+    --ink-soft: #b3bdb2;
+    --ink-faint: #7f8c82;
+    --line: rgba(233,237,232,0.14);
+    --line-strong: rgba(233,237,232,0.26);
+    --accent: #4bb597;
+    --accent-strong: #7fd0b6;
+    --accent-2: #d9a252;
+    --accent-2-strong: #ecc17c;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ background: var(--paper); }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection{ background: var(--accent); color: var(--paper); }
+
+  a{ color: var(--accent-strong); text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+  a:hover{ color: var(--accent); }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 28px; }
+  .prose{ max-width: 66ch; }
+
+  h1,h2,h3{ font-family: "IBM Plex Serif", ui-serif, Georgia, serif; font-weight: 600; text-wrap: balance; color: var(--ink); margin: 0; }
+
+  .eyebrow{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+  }
+
+  .mono{ font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    position: sticky; top:0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; height:56px; }
+  .topbar-name{ font-family:"IBM Plex Serif",serif; font-weight:600; font-size:1rem; }
+  .topbar nav{ display:flex; gap:22px; }
+  .topbar nav a{ font-size:0.85rem; color: var(--ink-soft); text-decoration:none; }
+  .topbar nav a:hover{ color: var(--accent-strong); }
+  @media (max-width: 620px){ .topbar nav{ display:none; } }
+
+  /* ---------- hero ---------- */
+  header.hero{ padding: 64px 0 0; border-bottom: 1px solid var(--line); }
+  .hero-top{ display:flex; flex-wrap:wrap; gap: 24px; justify-content:space-between; align-items:flex-end; }
+  .hero h1{ font-size: clamp(2.4rem, 5vw, 3.6rem); line-height:1.04; letter-spacing:-0.01em; }
+  .hero .role{ margin-top:10px; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--accent-strong); font-family:"IBM Plex Serif",serif; font-style:italic; }
+  .contact-block{ text-align:right; font-family:"IBM Plex Mono",monospace; font-size:0.82rem; color: var(--ink-soft); line-height:1.9; }
+  .contact-block a{ color: var(--ink-soft); text-decoration:none; }
+  .contact-block a:hover{ color: var(--accent-strong); }
+  @media (max-width: 620px){ .contact-block{ text-align:left; } }
+
+  .ticker{
+    margin-top: 44px;
+    display:grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+  }
+  .ticker li{
+    list-style:none;
+    padding: 18px 20px 22px;
+    border-right: 1px solid var(--line);
+  }
+  .ticker li:last-child{ border-right:none; }
+  .ticker .num{ font-family:"IBM Plex Mono",monospace; font-weight:600; font-size: clamp(1.5rem,3vw,2rem); color: var(--accent-strong); font-variant-numeric: tabular-nums; }
+  .ticker .label{ margin-top:4px; font-size:0.76rem; color: var(--ink-faint); letter-spacing:0.03em; }
+  @media (max-width: 700px){ .ticker{ grid-template-columns: repeat(2,1fr); } .ticker li:nth-child(2){ border-right:none; } }
+
+  /* ---------- sections ---------- */
+  section{ padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom: 28px; }
+  .section-head .idx{ font-family:"IBM Plex Mono",monospace; font-size:0.78rem; color: var(--ink-faint); }
+  .section-head h2{ font-size: 1.5rem; }
+
+  .summary p{ margin:0 0 16px; color: var(--ink-soft); }
+  .summary p:last-child{ margin-bottom:0; }
+  .summary strong{ color: var(--ink); font-weight:600; }
+
+  /* competencies */
+  .comp-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .comp-card{ background: var(--surface); padding: 22px 24px; }
+  .comp-card h3{ font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:0.95rem; color: var(--accent-strong); margin-bottom:10px; }
+  .comp-card .tags{ display:flex; flex-wrap:wrap; gap:6px 8px; }
+  .comp-card .tags span{ font-family:"IBM Plex Mono",monospace; font-size:0.74rem; color: var(--ink-soft); background: var(--surface-2); padding:3px 8px; border-radius:3px; }
+  @media (max-width: 700px){ .comp-grid{ grid-template-columns: 1fr; } }
+
+  /* experience */
+  .role-block{ margin-bottom: 44px; }
+  .role-block:last-child{ margin-bottom:0; }
+  .role-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap: 8px 20px; border-bottom: 1px solid var(--line-strong); padding-bottom: 10px; margin-bottom: 14px; }
+  .role-head .org{ font-family:"IBM Plex Serif",serif; font-weight:600; font-size:1.2rem; }
+  .role-head .loc-date{ font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color: var(--ink-faint); text-align:right; }
+  .role-title{ font-style:italic; color: var(--ink-soft); margin-bottom:14px; font-family:"IBM Plex Serif",serif; }
+  ul.bullets{ margin:0; padding:0; list-style:none; }
+  ul.bullets li{ position:relative; padding-left:20px; margin-bottom:11px; color: var(--ink-soft); }
+  ul.bullets li:last-child{ margin-bottom:0; }
+  ul.bullets li::before{ content:"—"; position:absolute; left:0; color: var(--accent); }
+  ul.bullets li strong{ color: var(--ink); font-weight:600; }
+
+  /* education / certs */
+  .ledger{ width:100%; border-collapse:collapse; }
+  .ledger tr{ border-bottom: 1px solid var(--line); }
+  .ledger tr:last-child{ border-bottom:none; }
+  .ledger td{ padding: 14px 0; vertical-align:top; }
+  .ledger td.deg{ font-weight:600; }
+  .ledger td.school{ color: var(--ink-soft); text-align:right; font-family:"IBM Plex Mono",monospace; font-size:0.86rem; }
+
+  .cert-item{ display:flex; gap:16px; }
+  .cert-item .tag{ flex:none; font-family:"IBM Plex Mono",monospace; font-size:0.72rem; color: var(--accent-2-strong); background: color-mix(in srgb, var(--accent-2) 16%, transparent); border:1px solid color-mix(in srgb, var(--accent-2) 40%, transparent); padding:3px 8px; border-radius:3px; height:fit-content; white-space:nowrap; }
+  .cert-item p{ margin:0; color: var(--ink-soft); }
+  .cert-item p strong{ color:var(--ink); }
+
+  footer{ padding: 40px 0 60px; }
+  footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; }
+  footer .fname{ font-family:"IBM Plex Serif",serif; font-weight:600; }
+  footer .fmeta{ font-family:"IBM Plex Mono",monospace; font-size:0.78rem; color: var(--ink-faint); }
+  footer a{ text-decoration:none; }
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ opacity:0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.in{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-name">Keti Bakiri</div>
+    <nav>
+      <a href="#summary">Summary</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <p class="eyebrow">Product Management — Credit &amp; Pricing</p>
+        <h1>Keti Bakiri</h1>
+        <p class="role">Pricing engines, credit risk logic, and the platforms that run them at scale.</p>
+      </div>
+      <div class="contact-block">
+        <div>Cincinnati, OH</div>
+        <div><a href="mailto:keti.bakiri@outlook.com">keti.bakiri@outlook.com</a></div>
+        <div>904&#8209;304&#8209;9676</div>
+      </div>
+    </div>
+
+    <ul class="ticker">
+      <li><div class="num" data-target="20" data-suffix="+">0</div><div class="label">Years in financial services</div></li>
+      <li><div class="num" data-target="400" data-prefix="$" data-suffix="M+">0</div><div class="label">Annual deal volume priced</div></li>
+      <li><div class="num" data-target="12" data-suffix=" yrs">0</div><div class="label">Owned the pricing platform end to end</div></li>
+      <li><div class="num" data-target="40" data-suffix="%">0</div><div class="label">Cut in deal-update cycle time</div></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="summary">
+    <div class="section-head"><span class="idx">01</span><h2>Summary</h2></div>
+    <div class="summary prose reveal">
+      <p>Credit and pricing product SME with <strong>20+ years in financial services</strong> and <strong>12 years owning</strong> a commercial profitability pricing platform end to end. The deal pricing engine at Fifth Third Bank evaluates <strong>$400M+ in annual deal volume</strong> &mdash; underwriting logic, credit risk models, loan economics, and multi-product deal structures spanning bundled pricing, scenario analysis, profitability projection versus P&amp;L, and portfolio optimization. The models kept evolving with users, markets, products, and regulation, and so did the platform.</p>
+      <p>Deep in RAROC, Expected Loss, Fund Transfer Pricing, and cost-of-capital methodology &mdash; the same mathematical patterns that apply directly to consumer products. Currently completing the <strong>IBM AI Engineering Professional Certificate</strong>, covering machine learning, deep learning, and generative AI.</p>
+    </div>
+  </section>
+
+  <section id="competencies">
+    <div class="section-head"><span class="idx">02</span><h2>Core Competencies</h2></div>
+    <div class="comp-grid reveal">
+      <div class="comp-card">
+        <h3>Credit &amp; Pricing Strategy</h3>
+        <div class="tags"><span>Underwriting Logic</span><span>Credit Risk Modeling</span><span>Loan Economics</span><span>Pricing Methodology</span><span>RAROC</span><span>Expected Loss</span><span>Fund Transfer Pricing</span><span>Cost of Capital</span><span>Profitability Analysis</span><span>Deal Approval Workflow</span></div>
+      </div>
+      <div class="comp-card">
+        <h3>Lending Experience</h3>
+        <div class="tags"><span>Consumer &amp; Commercial Products</span><span>Loans</span><span>Leases</span><span>Deposits</span><span>Revolvers</span><span>IRD</span><span>FX</span><span>Commodities</span><span>Consumer Auto</span><span>RV</span><span>Student Loan</span><span>Credit Card Portfolios</span></div>
+      </div>
+      <div class="comp-card">
+        <h3>Multi&#8209;Product Pricing</h3>
+        <div class="tags"><span>Configurable Deal Engine Rules</span><span>Multi&#8209;Product Deal Economics</span><span>Scenario Comparison</span><span>Fee Structure Design</span><span>Pricing Decisions</span></div>
+      </div>
+      <div class="comp-card">
+        <h3>Product Delivery</h3>
+        <div class="tags"><span>Strategy &amp; Roadmap</span><span>Backlog Prioritization</span><span>Functional &amp; Tech Specs</span><span>User Stories</span><span>Acceptance Criteria</span><span>Release Planning</span><span>Go / No&#8209;Go Authority</span></div>
+      </div>
+      <div class="comp-card">
+        <h3>Data &amp; Analytics</h3>
+        <div class="tags"><span>SQL</span><span>Python</span><span>Pandas</span><span>VBA</span><span>Advanced Excel</span><span>Tableau</span><span>Power BI</span><span>SAS</span><span>Loss Forecasting</span><span>Business Case Modeling</span></div>
+      </div>
+      <div class="comp-card">
+        <h3>Stakeholder Partnership</h3>
+        <div class="tags"><span>Product</span><span>Engineering</span><span>Treasury</span><span>Risk</span><span>IT</span><span>Cross&#8209;Functional Collaboration</span><span>Executive Communication</span><span>Data&#8209;Driven Decisions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><span class="idx">03</span><h2>Professional Experience</h2></div>
+
+    <div class="role-block reveal">
+      <div class="role-head">
+        <div class="org">Fifth Third Bank</div>
+        <div class="loc-date">Cincinnati, OH &nbsp;&middot;&nbsp; 07.2014 &ndash; 04.2026</div>
+      </div>
+      <p class="role-title">Sr. Credit Risk Analyst, Commercial Pricing and Analytics &mdash; acting Technical Product Manager, Deal Pricing Platform</p>
+      <ul class="bullets">
+        <li>Owned the platform roadmap end to end, keeping delivery <strong>outcome-focused</strong> and every stakeholder aligned on results &mdash; translating between technical and non-technical audiences along the way.</li>
+        <li>Architected pricing logic covering underwriting inputs, credit risk factors, loan economics, RAROC, and Expected Loss &mdash; the same mathematical patterns that drive consumer products &mdash; and ensured correct implementation at enterprise scale.</li>
+        <li>Prototyped pricing logic in Excel and Python, drove it through vendor engineering to production, scaled it across the commercial banking portfolio, and led go-to-market across Finance, Treasury, Risk, and IT through training, playbooks, and demos.</li>
+        <li>Designed multi-product deal economics, including bundled pricing and scenario comparison across product families.</li>
+        <li>Implemented Fund Transfer Pricing methodology inside the engine, translating Liquidity, Economic, and Regulatory Capital frameworks into calculation logic; coordinated with Treasury on curve inputs, spread calibration, and capital allocation.</li>
+        <li>Wrote the functional and technical requirements, epics, user stories, and acceptance criteria the vendor engineering team built from &mdash; turning ambiguous business needs into ready-to-build specs.</li>
+        <li>Held <strong>go/no-go release authority</strong> on every production deployment, enforcing quality gates and entry/exit criteria.</li>
+        <li>Ran sessions with Finance and IT to validate problems, prioritize the backlog, and align on quarterly release plans.</li>
+        <li>Cut deal-update cycle time by <strong>40%</strong> and eliminated deal-review errors through prototype validation, workflow redesign, and automation.</li>
+        <li>Sustained a <strong>12-year</strong> vendor delivery partnership with Brilliance Financial Technology (Australia), coordinating engineering roadmaps, releases, and integration across time zones.</li>
+        <li>Built executive dashboards in Tableau, Power BI, and SAS surfacing pricing performance, deal profitability, and portfolio KPIs for senior leadership.</li>
+        <li>Applied AI-driven development daily with Copilot, Claude, and Claude Code &mdash; automating documentation, accelerating SQL/Python/VBA work, and prototyping interactive dashboards.</li>
+      </ul>
+    </div>
+
+    <div class="role-block reveal">
+      <div class="role-head">
+        <div class="org">US Bank</div>
+        <div class="loc-date">Cincinnati, OH &nbsp;&middot;&nbsp; 11.2011 &ndash; 08.2013</div>
+      </div>
+      <p class="role-title">Sr. Credit Risk Analyst, Consumer</p>
+      <ul class="bullets">
+        <li>Owned portfolio analytics for consumer auto, RV, student loan, and credit card portfolios.</li>
+        <li>Forecasted quarterly losses at <strong>95%+ accuracy</strong> using statistical modeling and data science techniques against consumer credit portfolios.</li>
+        <li>Partnered with underwriting teams on consumer credit risk logic and approval-criteria modeling.</li>
+        <li>Led the redesign and automation of monthly risk reporting, cutting manual effort by <strong>50%</strong> and improving data accuracy across stakeholder deliverables.</li>
+        <li>Served as primary liaison between Indirect and Direct consumer lending, accelerating decisioning-model deployment timelines by <strong>30%</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="role-block reveal">
+      <div class="role-head">
+        <div class="org">EverBank</div>
+        <div class="loc-date">Jacksonville, FL &nbsp;&middot;&nbsp; 05.2005 &ndash; 07.2011</div>
+      </div>
+      <p class="role-title">Sr. Business Analyst, LSBO Mortgages</p>
+      <ul class="bullets">
+        <li>Led data standardization and reporting automation for a <strong>$2B</strong> mortgage portfolio, integrating 70+ data sources and improving investor reporting turnaround by <strong>35%</strong>.</li>
+        <li>Oversaw month-end P&amp;L and GL reconciliation across 32 sub-serviced portfolios, implementing process controls that cut reporting delays by <strong>50%</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><span class="idx">04</span><h2>Education</h2></div>
+    <table class="ledger reveal">
+      <tr><td class="deg">Master of Science, Business Analytics</td><td class="school">University of Cincinnati &middot; Cincinnati, OH</td></tr>
+      <tr><td class="deg">Master of Business Administration</td><td class="school">University of North Florida &middot; Jacksonville, FL</td></tr>
+      <tr><td class="deg">Bachelor of Science, Mathematics &amp; Physics</td><td class="school">Eqerem &Ccedil;abej University &middot; Albania</td></tr>
+    </table>
+  </section>
+
+  <section id="certifications" style="border-bottom:none;">
+    <div class="section-head"><span class="idx">05</span><h2>Certifications</h2></div>
+    <div class="cert-item reveal">
+      <span class="tag">In Progress</span>
+      <p><strong>IBM AI Engineering Professional Certificate</strong> &mdash; Coursera. Expected completion Q4 2026&ndash;Q1 2027. Covers Python for AI, machine learning, deep learning with Keras and PyTorch, and generative AI with LLMs.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fname">Keti Bakiri</div>
+    <div class="fmeta">Cincinnati, OH &nbsp;&middot;&nbsp; <a href="mailto:keti.bakiri@outlook.com">keti.bakiri@outlook.com</a> &nbsp;&middot;&nbsp; 904&#8209;304&#8209;9676</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-target'));
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    if(reduce){ el.textContent = prefix + target + suffix; return; }
+    var start = null, dur = 1100;
+    function step(ts){
+      if(start===null) start = ts;
+      var p = Math.min((ts-start)/dur, 1);
+      var eased = 1 - Math.pow(1-p, 3);
+      var val = Math.round(target*eased);
+      el.textContent = prefix + val + suffix;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var nums = document.querySelectorAll('.ticker .num');
+  var tickerDone = false;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !tickerDone){
+        tickerDone = true;
+        nums.forEach(countUp);
+      }
+    });
+  }, {threshold: 0.4});
+  if(nums.length) io.observe(nums[0].closest('.ticker'));
+
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var rio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target); }
+      });
+    }, {threshold: 0.12});
+    reveals.forEach(function(el){ rio.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
