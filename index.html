@@ -4,59 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Keti Bakiri</title>
-<meta name="description" content="Product management portfolio for Keti Bakiri, a credit and pricing SME with 20+ years in financial services.">
+<meta name="description" content="Keti Bakiri: business finance and loan advisory backed by 20+ years in credit, pricing, and risk at major banks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --paper: #eef1ec;
-    --surface: #e4e9e2;
-    --surface-2: #dbe1d8;
-    --ink: #151b17;
-    --ink-soft: #4a544c;
-    --ink-faint: #7c877e;
-    --line: rgba(21,27,23,0.14);
-    --line-strong: rgba(21,27,23,0.28);
-    --accent: #1f6f5c;
-    --accent-strong: #14503f;
-    --accent-2: #a9701f;
-    --accent-2-strong: #7d5314;
-    --shadow: 0 1px 2px rgba(21,27,23,0.06);
+    --paper: #fbf3f6;
+    --surface: #f5e4ea;
+    --surface-2: #eed3dd;
+    --ink: #2a1520;
+    --ink-soft: #5e4550;
+    --ink-faint: #8f7580;
+    --line: rgba(42,21,32,0.14);
+    --line-strong: rgba(42,21,32,0.28);
+    --accent: #b0245f;
+    --accent-strong: #8a1748;
+    --accent-2: #8f5f14;
+    --accent-2-strong: #6b450a;
+    --shadow: 0 1px 2px rgba(42,21,32,0.06);
   }
 
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper: #101512;
-      --surface: #171e19;
-      --surface-2: #1e2721;
-      --ink: #e9ede8;
-      --ink-soft: #b3bdb2;
-      --ink-faint: #7f8c82;
-      --line: rgba(233,237,232,0.14);
-      --line-strong: rgba(233,237,232,0.26);
-      --accent: #4bb597;
-      --accent-strong: #7fd0b6;
+      --paper: #180d13;
+      --surface: #23131b;
+      --surface-2: #2e1a24;
+      --ink: #f6e9ee;
+      --ink-soft: #cfb6c1;
+      --ink-faint: #957c88;
+      --line: rgba(246,233,238,0.14);
+      --line-strong: rgba(246,233,238,0.26);
+      --accent: #f08ab4;
+      --accent-strong: #f7b0c9;
       --accent-2: #d9a252;
       --accent-2-strong: #ecc17c;
       --shadow: 0 1px 2px rgba(0,0,0,0.4);
     }
   }
   :root[data-theme="dark"]{
-    --paper: #101512;
-    --surface: #171e19;
-    --surface-2: #1e2721;
-    --ink: #e9ede8;
-    --ink-soft: #b3bdb2;
-    --ink-faint: #7f8c82;
-    --line: rgba(233,237,232,0.14);
-    --line-strong: rgba(233,237,232,0.26);
-    --accent: #4bb597;
-    --accent-strong: #7fd0b6;
-    --accent-2: #d9a252;
-    --accent-2-strong: #ecc17c;
-    --shadow: 0 1px 2px rgba(0,0,0,0.4);
+    --paper: #180d13;
+      --surface: #23131b;
+      --surface-2: #2e1a24;
+      --ink: #f6e9ee;
+      --ink-soft: #cfb6c1;
+      --ink-faint: #957c88;
+      --line: rgba(246,233,238,0.14);
+      --line-strong: rgba(246,233,238,0.26);
+      --accent: #f08ab4;
+      --accent-strong: #f7b0c9;
+      --accent-2: #d9a252;
+      --accent-2-strong: #ecc17c;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
   }
 
   *{ box-sizing: border-box; }
@@ -175,6 +175,16 @@
   .cert-item p{ margin:0; color: var(--ink-soft); }
   .cert-item p strong{ color:var(--ink); }
 
+  /* services + contact */
+  .lede{ margin:0 0 28px; color: var(--ink-soft); font-size:1.05rem; }
+  .svc-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:1px; background: var(--line); border:1px solid var(--line); }
+  .svc-card{ background: var(--surface); padding: 24px; }
+  .svc-card h3{ font-size:1.05rem; color: var(--accent-strong); margin-bottom:8px; }
+  .svc-card p{ margin:0; color: var(--ink-soft); font-size:0.95rem; }
+  @media (max-width: 700px){ .svc-grid{ grid-template-columns: 1fr; } }
+  .cta{ display:inline-block; padding:12px 24px; background: var(--accent); color: var(--paper); text-decoration:none; font-weight:600; border-radius:3px; }
+  .cta:hover{ background: var(--accent-strong); color: var(--paper); }
+
   footer{ padding: 40px 0 60px; }
   footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; }
   footer .fname{ font-family:"IBM Plex Serif",serif; font-weight:600; }
@@ -193,10 +203,12 @@
   <div class="wrap">
     <div class="topbar-name">Keti Bakiri</div>
     <nav>
+      <a href="#services">Services</a>
       <a href="#summary">Summary</a>
       <a href="#competencies">Competencies</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </div>
@@ -205,9 +217,9 @@
   <div class="wrap">
     <div class="hero-top">
       <div>
-        <p class="eyebrow">Product Management — Credit &amp; Pricing</p>
+        <p class="eyebrow">Business Finance &amp; Loan Advisory</p>
         <h1>Keti Bakiri</h1>
-        <p class="role">Pricing engines, credit risk logic, and the platforms that run them at scale.</p>
+        <p class="role">Twenty years inside bank credit and pricing, now on your side of the table.</p>
       </div>
       <div class="contact-block">
         <div>Cincinnati, OH</div>
@@ -227,8 +239,31 @@
 
 <main class="wrap">
 
+  <section id="services">
+    <div class="section-head"><h2>Services</h2></div>
+    <p class="prose lede reveal">I know how lenders price, underwrite, and approve a deal because I built the engine that does it. I use that to help business owners borrow on better terms and make sound financial decisions.</p>
+    <div class="svc-grid reveal">
+      <div class="svc-card">
+        <h3>Loan advisory</h3>
+        <p>Structure and position a loan request the way an underwriter reads it: which facility fits, what a lender needs to see, and how to compare offers beyond the headline rate.</p>
+      </div>
+      <div class="svc-card">
+        <h3>Business finance</h3>
+        <p>Profitability analysis, business case modeling, and scenario comparison, so financing and pricing decisions rest on numbers instead of instinct.</p>
+      </div>
+      <div class="svc-card">
+        <h3>Credit and pricing review</h3>
+        <p>Understand what drives the rate you are quoted: credit risk, expected loss, cost of funds, and capital. Find where a deal has room to move.</p>
+      </div>
+      <div class="svc-card">
+        <h3>Financial modeling and reporting</h3>
+        <p>Excel, SQL, Python, and dashboard builds that turn portfolio and deal data into something a decision-maker can act on.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="summary">
-    <div class="section-head"><span class="idx">01</span><h2>Summary</h2></div>
+    <div class="section-head"><h2>Background</h2></div>
     <div class="summary prose reveal">
       <p>Credit and pricing product SME with <strong>20+ years in financial services</strong> and <strong>12 years owning</strong> a commercial profitability pricing platform end to end. The deal pricing engine at Fifth Third Bank evaluates <strong>$400M+ in annual deal volume</strong> &mdash; underwriting logic, credit risk models, loan economics, and multi-product deal structures spanning bundled pricing, scenario analysis, profitability projection versus P&amp;L, and portfolio optimization. The models kept evolving with users, markets, products, and regulation, and so did the platform.</p>
       <p>Deep in RAROC, Expected Loss, Fund Transfer Pricing, and cost-of-capital methodology &mdash; the same mathematical patterns that apply directly to consumer products. Currently completing the <strong>IBM AI Engineering Professional Certificate</strong>, covering machine learning, deep learning, and generative AI.</p>
@@ -236,7 +271,7 @@
   </section>
 
   <section id="competencies">
-    <div class="section-head"><span class="idx">02</span><h2>Core Competencies</h2></div>
+    <div class="section-head"><h2>Core Competencies</h2></div>
     <div class="comp-grid reveal">
       <div class="comp-card">
         <h3>Credit &amp; Pricing Strategy</h3>
@@ -266,7 +301,7 @@
   </section>
 
   <section id="experience">
-    <div class="section-head"><span class="idx">03</span><h2>Professional Experience</h2></div>
+    <div class="section-head"><h2>Professional Experience</h2></div>
 
     <div class="role-block reveal">
       <div class="role-head">
@@ -319,7 +354,7 @@
   </section>
 
   <section id="education">
-    <div class="section-head"><span class="idx">04</span><h2>Education</h2></div>
+    <div class="section-head"><h2>Education</h2></div>
     <table class="ledger reveal">
       <tr><td class="deg">Master of Science, Business Analytics</td><td class="school">University of Cincinnati &middot; Cincinnati, OH</td></tr>
       <tr><td class="deg">Master of Business Administration</td><td class="school">University of North Florida &middot; Jacksonville, FL</td></tr>
@@ -327,12 +362,18 @@
     </table>
   </section>
 
-  <section id="certifications" style="border-bottom:none;">
-    <div class="section-head"><span class="idx">05</span><h2>Certifications</h2></div>
+  <section id="certifications">
+    <div class="section-head"><h2>Certifications</h2></div>
     <div class="cert-item reveal">
       <span class="tag">In Progress</span>
       <p><strong>IBM AI Engineering Professional Certificate</strong> &mdash; Coursera. Expected completion Q4 2026&ndash;Q1 2027. Covers Python for AI, machine learning, deep learning with Keras and PyTorch, and generative AI with LLMs.</p>
     </div>
+  </section>
+
+  <section id="contact" style="border-bottom:none;">
+    <div class="section-head"><h2>Work with me</h2></div>
+    <p class="prose reveal">Tell me what you are financing or deciding and I will tell you honestly whether and how I can help.</p>
+    <p class="reveal"><a class="cta" href="mailto:keti.bakiri@outlook.com?subject=Business%20finance%20%2F%20loan%20advisory%20inquiry">Email Keti</a></p>
   </section>
 
 </main>
