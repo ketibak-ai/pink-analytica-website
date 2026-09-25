@@ -177,6 +177,16 @@
 
   /* services + contact */
   .lede{ margin:0 0 28px; color: var(--ink-soft); font-size:1.05rem; }
+  .eng-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1px; background: var(--line); border:1px solid var(--line); margin-bottom:36px; }
+  .eng-card{ background: var(--surface); padding: 24px; }
+  .eng-card h3{ font-size:1.1rem; margin:6px 0 8px; }
+  .eng-card p:last-child{ margin:0; color: var(--ink-soft); font-size:0.93rem; }
+  .cap-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:28px; margin-bottom:28px; }
+  .cap-group h3{ font-family:"IBM Plex Sans",sans-serif; font-size:0.95rem; color: var(--accent-strong); padding-bottom:8px; border-bottom:1px solid var(--line-strong); margin-bottom:10px; }
+  .cap-group ul{ margin:0; padding:0; list-style:none; color: var(--ink-soft); font-size:0.92rem; }
+  .cap-group li{ padding:5px 0; }
+  .scope-note{ font-size:0.88rem; color: var(--ink-faint); font-style:italic; margin:0 0 20px; }
+  @media (max-width: 800px){ .eng-grid, .cap-grid{ grid-template-columns: 1fr; } }
   .svc-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:1px; background: var(--line); border:1px solid var(--line); }
   .svc-card{ background: var(--surface); padding: 24px; }
   .svc-card h3{ font-size:1.05rem; color: var(--accent-strong); margin-bottom:8px; }
@@ -241,25 +251,58 @@
 
   <section id="services">
     <div class="section-head"><h2>Services</h2></div>
-    <p class="prose lede reveal">I know how lenders price, underwrite, and approve a deal because I built the engine that does it. I use that to help business owners borrow on better terms and make sound financial decisions.</p>
-    <div class="svc-grid reveal">
-      <div class="svc-card">
-        <h3>Loan advisory</h3>
-        <p>Structure and position a loan request the way an underwriter reads it: which facility fits, what a lender needs to see, and how to compare offers beyond the headline rate.</p>
+    <p class="prose lede reveal">I know how lenders price, underwrite, and approve a deal because I built the engine that does it. Choose the engagement that fits where you are.</p>
+
+    <div class="eng-grid reveal">
+      <div class="eng-card">
+        <p class="eyebrow">Fixed scope</p>
+        <h3>Loan Readiness Review</h3>
+        <p>A focused assessment of your financials and borrowing position, ending with a clear plan: which facility fits, what lenders will want to see, and what to fix first.</p>
       </div>
-      <div class="svc-card">
-        <h3>Business finance</h3>
-        <p>Profitability analysis, business case modeling, and scenario comparison, so financing and pricing decisions rest on numbers instead of instinct.</p>
+      <div class="eng-card">
+        <p class="eyebrow">Ongoing retainer</p>
+        <h3>Fractional Finance Advisor</h3>
+        <p>A senior credit and pricing mind alongside you through a raise, a refinance, or a growth push: guiding lender conversations and pressure-testing every offer.</p>
       </div>
-      <div class="svc-card">
-        <h3>Credit and pricing review</h3>
-        <p>Understand what drives the rate you are quoted: credit risk, expected loss, cost of funds, and capital. Find where a deal has room to move.</p>
-      </div>
-      <div class="svc-card">
-        <h3>Financial modeling and reporting</h3>
-        <p>Excel, SQL, Python, and dashboard builds that turn portfolio and deal data into something a decision-maker can act on.</p>
+      <div class="eng-card">
+        <p class="eyebrow">As needed</p>
+        <h3>Advisory Hours</h3>
+        <p>On-demand sparring for a specific decision: a term sheet, a pricing quote, a covenant, a model you want a second opinion on.</p>
       </div>
     </div>
+
+    <div class="cap-grid reveal">
+      <div class="cap-group">
+        <h3>Loan Advisory</h3>
+        <ul>
+          <li>Loan structuring and facility selection</li>
+          <li>Lender-ready credit packages</li>
+          <li>Term sheet and offer comparison</li>
+          <li>Negotiating pricing, fees, and covenants</li>
+        </ul>
+      </div>
+      <div class="cap-group">
+        <h3>Business Finance</h3>
+        <ul>
+          <li>Profitability and unit economics</li>
+          <li>Business case and scenario modeling</li>
+          <li>Cash flow and debt capacity analysis</li>
+          <li>Executive dashboards and reporting</li>
+        </ul>
+      </div>
+      <div class="cap-group">
+        <h3>Credit &amp; Pricing Insight</h3>
+        <ul>
+          <li>What drives your quoted rate</li>
+          <li>Expected loss and risk-based pricing</li>
+          <li>Cost of funds and capital, explained</li>
+          <li>Multi-product and bundled deal economics</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="scope-note reveal">I advise; I do not originate loans, broker deals, or provide tax, legal, or investment advice.</p>
+    <p class="reveal"><a class="cta" href="#contact">Start a conversation</a></p>
   </section>
 
   <section id="summary">
