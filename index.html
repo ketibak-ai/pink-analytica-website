@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pink Analytica</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="Pink Analytica: business finance and loan advisory, backed by 20+ years in credit, pricing, and risk at major banks.">
+<meta name="description" content="Pink Analytica: commercial lending pricing, profitability, and financial platform implementation, now applying AI to the same problems, backed by 20+ years in banking.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -127,6 +127,10 @@
   .contact-block a:hover{ color: var(--accent-strong); }
   @media (max-width: 620px){ .contact-block{ text-align:left; } }
 
+  .stats{ list-style:none; margin:36px 0 0; padding-top:28px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:28px 48px; }
+  .stat-num{ display:block; font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:1.6rem; color: var(--accent-strong); font-variant-numeric: tabular-nums; }
+  .stat-label{ display:block; margin-top:4px; font-size:0.8rem; color: var(--ink-faint); max-width:18ch; }
+
   /* ---------- sections ---------- */
   section{ padding: 56px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type{ border-bottom:none; }
@@ -144,12 +148,6 @@
   .comp-card .tags{ display:flex; flex-wrap:wrap; gap:6px 8px; }
   .comp-card .tags span{ font-family:"IBM Plex Mono",monospace; font-size:0.74rem; color: var(--ink-soft); background: var(--surface-2); padding:3px 8px; border-radius:3px; }
   @media (max-width: 700px){ .comp-grid{ grid-template-columns: 1fr; } }
-
-  /* certs */
-  .cert-item{ display:flex; gap:16px; }
-  .cert-item .tag{ flex:none; font-family:"IBM Plex Mono",monospace; font-size:0.72rem; color: var(--accent-2-strong); background: color-mix(in srgb, var(--accent-2) 16%, transparent); border:1px solid color-mix(in srgb, var(--accent-2) 40%, transparent); padding:3px 8px; border-radius:3px; height:fit-content; white-space:nowrap; }
-  .cert-item p{ margin:0; color: var(--ink-soft); }
-  .cert-item p strong{ color:var(--ink); }
 
   /* AI statement */
   .ai-quote{
@@ -181,17 +179,19 @@
   .cta .i-mark ellipse, .cta .i-mark polygon{ fill: var(--paper); }
   .cta .i-mark line{ stroke: var(--paper); }
 
-  /* selected work */
-  .work-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:1px; background: var(--line); border:1px solid var(--line); }
-  .work-card{ background: var(--surface); padding:26px; display:flex; flex-direction:column; gap:14px; }
-  .work-card h3{ font-size:1.15rem; }
-  .work-card p{ margin:0; color: var(--ink-soft); font-size:0.95rem; }
+  /* featured work */
+  .work-grid{ display:flex; flex-direction:column; gap:1px; background: var(--line); border:1px solid var(--line); }
+  .work-card{ background: var(--surface); padding:30px; display:flex; flex-direction:column; gap:14px; }
+  .work-card h3{ font-size:1.25rem; }
+  .work-card p{ margin:0; color: var(--ink-soft); font-size:0.97rem; }
+  .work-card.secondary{ padding:22px 30px; }
+  .work-card.secondary h3{ font-size:1.05rem; }
+  .work-card.secondary p{ font-size:0.93rem; }
   .work-tags{ display:flex; flex-wrap:wrap; gap:6px 8px; }
   .work-tags span{ font-family:"IBM Plex Mono",monospace; font-size:0.72rem; color: var(--ink-soft); background: var(--surface-2); padding:3px 8px; border-radius:3px; }
   .work-links{ display:flex; gap:20px; margin-top:auto; padding-top:4px; }
   .work-links a{ font-family:"IBM Plex Mono",monospace; font-size:0.82rem; font-weight:600; color: var(--accent-strong); text-decoration:none; }
   .work-links a:hover{ color: var(--accent); }
-  @media (max-width:700px){ .work-grid{ grid-template-columns:1fr; } }
 
   footer{ padding: 40px 0 60px; }
   footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; }
@@ -211,12 +211,10 @@
   <div class="wrap">
     <div class="topbar-name">Pink Analyt<span class="i-mark"><svg viewBox="0 0 20 34" aria-hidden="true"><ellipse cx="10" cy="4" rx="3.6" ry="3"/><polygon points="10,9 16,19 4,19"/><line x1="2" y1="20" x2="18" y2="20"/><line x1="10" y1="20" x2="10" y2="32"/></svg><span class="sr-only">i</span></span>ca</div>
     <nav>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#summary">Background</a>
-      <a href="#competencies">Brings</a>
-      <a href="#founder">Founder</a>
-      <a href="#ai">AI</a>
+      <a href="#what-i-do">What I Do</a>
+      <a href="#work">Featured Work</a>
+      <a href="#why">Why Pink Analytica</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -226,100 +224,76 @@
   <div class="wrap">
     <div class="hero-top">
       <div>
+        <p class="eyebrow">Financial Logic &rarr; Working Technology</p>
         <h1>Pink Analyt<span class="i-mark"><svg viewBox="0 0 20 34" aria-hidden="true"><ellipse cx="10" cy="4" rx="3.6" ry="3"/><polygon points="10,9 16,19 4,19"/><line x1="2" y1="20" x2="18" y2="20"/><line x1="10" y1="20" x2="10" y2="32"/></svg><span class="sr-only">i</span></span>ca</h1>
-        <p class="role">Turning complex financial systems into clarity &mdash; and earning trust along the way.</p>
+        <p class="role">Twenty years translating commercial lending pricing and profitability into systems that work. Now doing it with AI.</p>
       </div>
       <div class="contact-block">
         <div><a href="https://www.linkedin.com/in/ketibakiri" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ketibak-ai" target="_blank" rel="noopener">GitHub</a></div>
       </div>
     </div>
 
+    <ul class="stats">
+      <li><span class="stat-num">20+</span><span class="stat-label">years in financial services</span></li>
+      <li><span class="stat-num">12</span><span class="stat-label">years owning a commercial pricing &amp; profitability platform</span></li>
+      <li><span class="stat-num">$400M+</span><span class="stat-label">in annual deal volume</span></li>
+    </ul>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section id="services">
-    <div class="section-head"><h2>Services</h2></div>
-    <p class="prose lede reveal">Pink Analytica listens before it prices anything. It doesn't theorize about pricing and platforms &mdash; it ships them, at a scale most consultants only pitch. Pick the engagement that fits what you need.</p>
+  <section id="what-i-do">
+    <div class="section-head"><h2>What I Do</h2></div>
+    <p class="prose lede reveal">Pink Analytica listens before it prices anything. It doesn't theorize about commercial lending pricing and platforms &mdash; it has built them, at a scale most consultants only pitch. Three places that shows up:</p>
 
     <div class="eng-grid reveal">
       <div class="eng-card">
-        <p class="eyebrow">Fixed scope</p>
-        <h3>Commercial Lending &amp; Profitability Review</h3>
-        <p>A focused analysis of your lending economics and pricing &mdash; deal profitability, risk-adjusted returns, and where the numbers actually come from &mdash; ending with a clear read on where you stand.</p>
+        <h3>Commercial Lending Pricing &amp; Profitability</h3>
+        <p>Pricing model assessment, RAROC and profitability analysis, deal economics, risk-based pricing, and the decision logic underneath a loan approval &mdash; reviewed, validated, or built from scratch.</p>
       </div>
       <div class="eng-card">
-        <p class="eyebrow">Ongoing retainer</p>
-        <h3>AI Implementation &amp; Transformation</h3>
-        <p>Embedded alongside your team to implement new platforms, redesign the workflows around them, and bring AI agents into the processes that run your business.</p>
+        <h3>Financial Platform Implementation</h3>
+        <p>Business requirements and functional specs that translate financial logic into something engineering can build, plus the vendor coordination, UAT, and release readiness that make sure it actually works.</p>
       </div>
       <div class="eng-card">
-        <p class="eyebrow">As needed</p>
-        <h3>Advisory Hours</h3>
-        <p>On-demand sparring for a specific decision: a lending structure, a pricing model, a platform choice you want a second opinion on.</p>
+        <h3>AI&#8209;Enabled Financial Workflows</h3>
+        <p>AI agents and internal financial knowledge assistants built on problems already understood deeply &mdash; prototypes that go somewhere, not demos that stay demos.</p>
       </div>
     </div>
 
-    <div class="cap-grid reveal">
-      <div class="cap-group">
-        <h3>Commercial Lending</h3>
-        <ul>
-          <li>Loan structuring and facility selection</li>
-          <li>Lender-ready credit packages</li>
-          <li>Term sheet and offer comparison</li>
-          <li>Negotiating pricing, fees, and covenants</li>
-        </ul>
+    <p class="prose lede reveal" style="margin-top:36px;">The vocabulary, for anyone checking it's actually spoken here:</p>
+    <div class="comp-grid reveal">
+      <div class="comp-card">
+        <h3>Pricing &amp; Risk</h3>
+        <div class="tags"><span>RAROC</span><span>Expected Loss</span><span>Fund Transfer Pricing</span><span>Cost of Capital</span><span>Risk&#8209;Based Pricing</span><span>Deal Economics</span></div>
       </div>
-      <div class="cap-group">
-        <h3>Business Finance</h3>
-        <ul>
-          <li>Profitability and unit economics</li>
-          <li>Business case and scenario modeling</li>
-          <li>Cash flow and debt capacity analysis</li>
-          <li>Board- and lender-ready reporting</li>
-        </ul>
-      </div>
-      <div class="cap-group">
-        <h3>Credit &amp; Pricing Insight</h3>
-        <ul>
-          <li>What drives your quoted rate</li>
-          <li>Expected loss and risk-based pricing</li>
-          <li>Cost of funds and capital, explained</li>
-          <li>Multi-product and bundled deal economics</li>
-        </ul>
-      </div>
-      <div class="cap-group">
-        <h3>AI Implementation &amp; Transformation</h3>
-        <ul>
-          <li>Implementing new platforms and reorganizing workflows around them</li>
-          <li>Embedding AI agents into everyday processes</li>
-          <li>Modernizing legacy technology into working solutions</li>
-          <li>Custom dashboards in Tableau, Power BI, and SAS</li>
-          <li>Integrating services and data sources end to end</li>
-          <li>Turning business requirements into buildable specs</li>
-        </ul>
+      <div class="comp-card">
+        <h3>Lending Coverage</h3>
+        <div class="tags"><span>Commercial &amp; Consumer Lending</span><span>Multi&#8209;Product Deal Structuring</span><span>Bundled Pricing</span><span>Scenario Analysis</span><span>Portfolio Optimization</span></div>
       </div>
     </div>
 
-    <p class="scope-note reveal">Pink Analytica advises; it does not originate loans, broker deals, or provide tax, legal, or investment advice.</p>
+    <p class="scope-note reveal">Pink Analytica advises and implements; it does not originate loans, broker deals, or provide tax, legal, or investment advice.</p>
     <p class="reveal"><a class="cta" href="#contact">Start a conversation</a></p>
   </section>
 
   <section id="work">
-    <div class="section-head"><h2>Selected Work</h2></div>
+    <div class="section-head"><h2>Featured Work</h2></div>
     <p class="prose lede reveal">Proof, not just claims. These are live, working systems, built end to end with Claude.</p>
     <div class="work-grid reveal">
       <div class="work-card">
+        <p class="eyebrow">Flagship project</p>
         <h3>Commercial Lending RAROC Engine</h3>
-        <p>A full risk-adjusted pricing engine for a simulated commercial loan portfolio &mdash; 7,020 accounts across 500 relationships. It calculates RAROC, expected loss, and capital under Basel III, then solves for the right deal spread. A Claude-powered copilot answers pricing questions grounded in the bank's own policy documents.</p>
+        <p>A working model of how a bank actually prices and approves a commercial loan &mdash; not a demo of AI, a demonstration of the financial logic itself. A full risk-adjusted pricing engine for a simulated commercial loan portfolio: 7,020 accounts across 500 relationships, calculating RAROC, expected loss, and capital under Basel III, then solving for the right deal spread. A Claude-powered copilot answers pricing questions grounded in the bank's own policy documents.</p>
         <div class="work-tags"><span>RAROC</span><span>Basel III</span><span>FastAPI</span><span>Claude tool&#8209;use agent</span><span>62 unit tests</span></div>
         <div class="work-links">
           <a href="https://ketibak-ai.github.io/commercial-lending-raroc/" target="_blank" rel="noopener">Live demo &rarr;</a>
           <a href="https://github.com/ketibak-ai/commercial-lending-raroc" target="_blank" rel="noopener">View code &rarr;</a>
         </div>
       </div>
-      <div class="work-card">
+      <div class="work-card secondary">
+        <p class="eyebrow">Also &middot; the borrower's side of the same ecosystem</p>
         <h3>Business Loan Deal Desk</h3>
         <p>The lending model, flipped for the borrower. It shows the true APR behind a loan offer, what you can actually afford, and the bank's estimated walk-away rate &mdash; then turns that into dollar-valued negotiation leverage. Backed by a Claude advisor for SBA 7(a) and conventional financing questions.</p>
         <div class="work-tags"><span>True APR</span><span>SOFR curves</span><span>SBA 7(a)</span><span>Claude advisor</span><span>29 parity&#8209;tested scenarios</span></div>
@@ -331,65 +305,28 @@
     </div>
   </section>
 
-  <section id="summary">
-    <div class="section-head"><h2>Background</h2></div>
-    <div class="summary prose reveal">
-      <p>Credit and pricing product SME with <strong>20+ years in financial services</strong> and <strong>12 years owning</strong> a commercial profitability pricing platform end to end. The deal pricing engine evaluates <strong>$400M+ in annual deal volume</strong> &mdash; underwriting logic, credit risk models, loan economics, and multi-product deal structures spanning bundled pricing, scenario analysis, profitability projection versus P&amp;L, and portfolio optimization. The models kept evolving with users, markets, products, and regulation, and so did the platform.</p>
-      <p>Deep in RAROC, Expected Loss, Fund Transfer Pricing, and cost-of-capital methodology &mdash; the same mathematical patterns that apply directly to consumer products.</p>
-    </div>
-  </section>
-
-  <section id="ai">
-    <div class="section-head"><h2>Why AI</h2></div>
-    <blockquote class="ai-quote reveal">Pink Analytica believes AI is a revolutionary technology, and is embracing it fully. There is enormous potential for good in it, and the goal is to be part of the team that gets things done and makes it real.</blockquote>
+  <section id="why">
+    <div class="section-head"><h2>Why Pink Analyt<span class="i-mark"><svg viewBox="0 0 20 34" aria-hidden="true"><ellipse cx="10" cy="4" rx="3.6" ry="3"/><polygon points="10,9 16,19 4,19"/><line x1="2" y1="20" x2="18" y2="20"/><line x1="10" y1="20" x2="10" y2="32"/></svg><span class="sr-only">i</span></span>ca</h2></div>
+    <blockquote class="ai-quote reveal">Deep banking domain expertise, financial modeling, technology implementation, and AI &mdash; remove any one piece, and it's a different, more common kind of practice.</blockquote>
     <div class="prose reveal">
-      <p>That curiosity about technology traces back to a <strong>math undergraduate</strong> degree and a <strong>Business Analytics master's</strong> &mdash; a drive to understand how a system actually works, not just what it outputs. Pink Analytica isn't watching this shift from the sidelines. It builds executive dashboards with it, accelerates SQL, Python, and VBA work with it, and uses it daily inside a production pricing platform. This isn't about advising on transformation from the outside. It's about being on the team that builds it.</p>
-      <p>In practice that means the unglamorous work: implementing new systems, reorganizing workflows around them so people actually adopt them, embedding AI agents into everyday processes, and taking the legacy technology everyone is afraid to touch and turning it into something that works.</p>
+      <p>The banking problems were already understood, deeply, long before AI entered the picture. What changed is the tool: using AI, Python, and agents to do &mdash; faster, and independently &mdash; what used to take a vendor team and years. That is not a pivot into AI consulting. It's the same translation work, on a faster set of tools, built on a foundation of mathematics and business analytics that was there from the start.</p>
+      <p>In practice that means the unglamorous work: implementing systems, making business rules work in technology, fixing workflows, working with vendors, validating calculations, getting people to actually use new systems, modernizing legacy technology, and embedding AI into real processes.</p>
     </div>
   </section>
 
-  <section id="competencies">
-    <div class="section-head"><h2>What Pink Analyt<span class="i-mark"><svg viewBox="0 0 20 34" aria-hidden="true"><ellipse cx="10" cy="4" rx="3.6" ry="3"/><polygon points="10,9 16,19 4,19"/><line x1="2" y1="20" x2="18" y2="20"/><line x1="10" y1="20" x2="10" y2="32"/></svg><span class="sr-only">i</span></span>ca Brings</h2></div>
-    <p class="prose lede reveal">The rest of this page is in plain English on purpose. This part isn't &mdash; it's the specific vocabulary, for anyone checking that it's actually spoken here.</p>
-    <div class="comp-grid reveal">
-      <div class="comp-card">
-        <h3>Pricing &amp; Risk</h3>
-        <div class="tags"><span>RAROC</span><span>Expected Loss</span><span>Fund Transfer Pricing</span><span>Cost of Capital</span><span>Risk&#8209;Based Pricing</span><span>Deal Economics</span></div>
-      </div>
-      <div class="comp-card">
-        <h3>Lending Coverage</h3>
-        <div class="tags"><span>Commercial &amp; Consumer Lending</span><span>Multi&#8209;Product Deal Structuring</span><span>Bundled Pricing</span><span>Scenario Analysis</span><span>Portfolio Optimization</span></div>
-      </div>
-      <div class="comp-card">
-        <h3>Delivery</h3>
-        <div class="tags"><span>Roadmap &amp; Backlog Ownership</span><span>Technical Specs &amp; User Stories</span><span>Release Authority</span><span>Vendor &amp; Cross&#8209;Team Delivery</span></div>
-      </div>
-      <div class="comp-card">
-        <h3>Tools</h3>
-        <div class="tags"><span>SQL</span><span>Python</span><span>Tableau</span><span>Power BI</span><span>SAS</span><span>Advanced Excel</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="founder">
+  <section id="about">
     <div class="section-head founder-head reveal">
       <img class="founder-photo" src="founder.jpg" alt="Keti Bakiri, founder of Pink Analytica, smiling, wearing glasses and a dark blazer">
       <div>
-        <h2>Founder</h2>
+        <h2>About</h2>
         <p class="founder">Keti Bakiri</p>
       </div>
     </div>
     <div class="summary prose reveal">
-      <p>Pink Analytica's founder spent a career inside banking translating complexity into clarity: the credit logic, the risk models, the mathematics behind what a loan actually costs, rebuilt as software real underwriters relied on every day. Pink Analytica continues that same work for anyone outside a bank who needs it.</p>
-      <p>What drives it now is simple: a belief in doing good work, and in building relationships people can actually trust.</p>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <div class="section-head"><h2>Certifications</h2></div>
-    <div class="cert-item reveal">
-      <span class="tag">In Progress</span>
-      <p><strong>IBM AI Engineering Professional Certificate</strong> &mdash; Coursera. Expected completion Q4 2026&ndash;Q1 2027. Covers Python for AI, machine learning, deep learning with Keras and PyTorch, and generative AI with LLMs.</p>
+      <p>For twelve years, the official title was Reporting Analyst. The title didn't describe the job. The actual role was subject-matter expert and business-technology bridge for a commercial lending pricing and profitability platform supporting <strong>$400M+</strong> in annual deal volume: understanding the financial calculations in detail, translating business rules into system requirements, building and validating prototypes, and working directly with engineering and vendor teams to make sure what shipped actually worked.</p>
+      <p>That meant working with origination and servicing systems, understanding how the calculations flowed through the broader banking ecosystem, defining functional requirements and workflows for engineering, testing and validating releases, and explaining complex financial results to leadership &mdash; inside an agile environment, with real responsibility for whether the implementation worked, not just whether it was reported on.</p>
+      <p>That same instinct &mdash; translate the math, specify the system, verify it works &mdash; is now applied to AI. Formal training in mathematics and business analytics, and an in-progress <strong>IBM AI Engineering Professional Certificate</strong>, support the work; twenty years of financial-services experience is what it's built on.</p>
+      <p>What drives it: a belief in doing good work, and in building relationships people can actually trust.</p>
     </div>
   </section>
 
