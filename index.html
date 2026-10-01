@@ -110,7 +110,9 @@
   header.hero{ padding: 64px 0 0; border-bottom: 1px solid var(--line); }
   .hero-top{ display:flex; flex-wrap:wrap; gap: 24px; justify-content:space-between; align-items:flex-end; }
   .hero h1{ font-size: clamp(2.4rem, 5vw, 3.6rem); line-height:1.04; letter-spacing:-0.01em; }
+  .hero-headline{ margin-top:18px; font-family:"IBM Plex Serif",serif; font-weight:600; font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height:1.35; color: var(--ink); max-width:46ch; }
   .hero .role{ margin-top:10px; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--accent-strong); font-family:"IBM Plex Serif",serif; font-style:italic; }
+  .hero-keywords{ margin-top:14px; font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color: var(--ink-faint); }
   .founder{ margin:10px 0 0; font-family:"IBM Plex Mono",monospace; font-size:0.8rem; letter-spacing:0.08em; color: var(--ink-faint); }
   .founder-photo{ width:96px; height:96px; border-radius:50%; object-fit:cover; border:1px solid var(--line-strong); flex:none; }
   .section-head.founder-head{ align-items:center; }
@@ -126,10 +128,6 @@
   .contact-block a{ color: var(--ink-soft); text-decoration:none; }
   .contact-block a:hover{ color: var(--accent-strong); }
   @media (max-width: 620px){ .contact-block{ text-align:left; } }
-
-  .stats{ list-style:none; margin:36px 0 0; padding-top:28px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:28px 48px; }
-  .stat-num{ display:block; font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:1.6rem; color: var(--accent-strong); font-variant-numeric: tabular-nums; }
-  .stat-label{ display:block; margin-top:4px; font-size:0.8rem; color: var(--ink-faint); max-width:18ch; }
 
   /* ---------- sections ---------- */
   section{ padding: 56px 0; border-bottom: 1px solid var(--line); }
@@ -224,20 +222,15 @@
   <div class="wrap">
     <div class="hero-top">
       <div>
-        <p class="eyebrow">Financial Logic &rarr; Working Technology</p>
         <h1>Pink Analyt<span class="i-mark"><svg viewBox="0 0 20 34" aria-hidden="true"><ellipse cx="10" cy="4" rx="3.6" ry="3"/><polygon points="10,9 16,19 4,19"/><line x1="2" y1="20" x2="18" y2="20"/><line x1="10" y1="20" x2="10" y2="32"/></svg><span class="sr-only">i</span></span>ca</h1>
-        <p class="role">Twenty years building and validating the RAROC and pricing logic behind commercial loan approvals &mdash; not just specifying it. Now applying the same discipline to AI.</p>
+        <p class="hero-headline">20+ Years in Financial Technology. 12 Years in Commercial Pricing &amp; Profitability.</p>
+        <p class="role">Building and validating the financial logic behind the platforms &mdash; now applying that same discipline to AI.</p>
+        <p class="hero-keywords">Commercial pricing &middot; Profitability &middot; RAROC &middot; Financial platforms &middot; AI&#8209;enabled workflows</p>
       </div>
       <div class="contact-block">
         <div><a href="https://www.linkedin.com/in/ketibakiri" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ketibak-ai" target="_blank" rel="noopener">GitHub</a></div>
       </div>
     </div>
-
-    <ul class="stats">
-      <li><span class="stat-num">20+</span><span class="stat-label">years in financial services</span></li>
-      <li><span class="stat-num">12</span><span class="stat-label">years as SME for a commercial pricing &amp; profitability platform</span></li>
-      <li><span class="stat-num">$400M+</span><span class="stat-label">in annual deal volume</span></li>
-    </ul>
   </div>
 </header>
 
