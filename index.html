@@ -129,6 +129,9 @@
   .contact-block a:hover{ color: var(--accent-strong); }
   @media (max-width: 620px){ .contact-block{ text-align:left; } }
 
+  .title-story{ font-family:"IBM Plex Serif",serif; font-weight:600; font-size: clamp(1.4rem, 3vw, 2rem); line-height:1.5; color: var(--ink); max-width:54ch; }
+  .title-story .ts-label{ font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:0.55em; letter-spacing:0.08em; text-transform:uppercase; color: var(--accent-strong); margin-right:0.3em; }
+
   /* ---------- sections ---------- */
   section{ padding: 56px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type{ border-bottom:none; }
@@ -236,6 +239,10 @@
 
 <main class="wrap">
 
+  <section id="story">
+    <p class="title-story reveal"><span class="ts-label">Official title:</span> Reporting Analyst.<br><span class="ts-label">Actual job:</span> pricing $400M+ in commercial loans a year.</p>
+  </section>
+
   <section id="what-i-do">
     <div class="section-head"><h2>What It Does</h2></div>
     <p class="prose lede reveal">Pink Analytica listens before it prices anything. It doesn't theorize about commercial lending pricing and platforms &mdash; it has built them, at a scale most consultants only pitch. Three places that show up:</p>
@@ -316,7 +323,7 @@
       </div>
     </div>
     <div class="summary prose reveal">
-      <p>The official title was Reporting Analyst. It didn't describe the job. The actual role was subject-matter expert and business-technology bridge for a commercial lending pricing and profitability platform supporting <strong>$400M+</strong> in annual deal volume: understanding the financial calculations in detail, translating business rules into system requirements, building and validating prototypes, and working directly with engineering and vendor teams to make sure what shipped actually worked.</p>
+      <p>The actual role was subject-matter expert and business-technology bridge for a commercial lending pricing and profitability platform: understanding the financial calculations in detail, translating business rules into system requirements, building and validating prototypes, and working directly with engineering and vendor teams to make sure what shipped actually worked.</p>
       <p>That meant working with origination and servicing systems, understanding how the calculations flowed through the broader banking ecosystem, defining functional requirements and workflows for engineering, testing and validating releases, and explaining complex financial results to leadership &mdash; inside an agile environment, with real responsibility for whether the implementation worked, not just whether it was reported on.</p>
       <p>That same instinct &mdash; translate the math, specify the system, verify it works &mdash; is now applied to AI. Formal training in mathematics and business analytics, and an in-progress <strong>IBM AI Engineering Professional Certificate</strong>, support work built on a long career in financial services.</p>
       <p>What drives it: a belief in doing good work, and in building relationships people can actually trust.</p>
