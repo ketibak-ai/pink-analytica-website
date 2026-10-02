@@ -110,7 +110,9 @@
   header.hero{ padding: 64px 0 0; border-bottom: 1px solid var(--line); }
   .hero-top{ display:flex; flex-wrap:wrap; gap: 24px; justify-content:space-between; align-items:flex-end; }
   .hero h1{ font-size: clamp(2.4rem, 5vw, 3.6rem); line-height:1.04; letter-spacing:-0.01em; }
-  .hero-headline{ margin-top:18px; font-family:"IBM Plex Serif",serif; font-weight:600; font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height:1.35; color: var(--ink); max-width:46ch; }
+  .hero-headline{ margin-top:18px; display:flex; flex-wrap:wrap; gap:8px 32px; }
+  .hero-headline .stat-item{ margin:0; font-family:"IBM Plex Serif",serif; font-weight:600; font-size: clamp(1.1rem, 2.1vw, 1.3rem); line-height:1.35; color: var(--ink); }
+  .hero-headline .stat-item::before{ content:"\2022"; color: var(--accent); margin-right:0.5em; }
   .hero .role{ margin-top:10px; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--accent-strong); font-family:"IBM Plex Serif",serif; font-style:italic; }
   .hero-keywords{ margin-top:14px; font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color: var(--ink-faint); }
   .founder{ margin:10px 0 0; font-family:"IBM Plex Mono",monospace; font-size:0.8rem; letter-spacing:0.08em; color: var(--ink-faint); }
@@ -220,7 +222,10 @@
     <div class="hero-top">
       <div>
         <h1>Pink Analyt<span class="i-mark"><svg viewBox="0 0 20 34" aria-hidden="true"><ellipse cx="10" cy="4" rx="3.6" ry="3"/><polygon points="10,9 16,19 4,19"/><line x1="2" y1="20" x2="18" y2="20"/><line x1="10" y1="20" x2="10" y2="32"/></svg><span class="sr-only">i</span></span>ca</h1>
-        <p class="hero-headline">20+ Years in Financial Technology. 12 Years in Commercial Pricing &amp; Profitability.</p>
+        <div class="hero-headline">
+          <p class="stat-item">20+ Years in Financial Technology</p>
+          <p class="stat-item">12 Years in Commercial Pricing &amp; Profitability</p>
+        </div>
         <p class="role">Building and validating the financial logic behind the platforms &mdash; now applying that same discipline to AI.</p>
         <p class="hero-keywords">Commercial pricing &middot; Profitability &middot; RAROC &middot; Financial platforms &middot; AI&#8209;enabled workflows</p>
       </div>
