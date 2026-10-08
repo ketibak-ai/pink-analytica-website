@@ -112,6 +112,11 @@ header.hero{ padding: 64px 0 0; border-bottom: 1px solid var(--line); }
 .i-mark svg{ display:block; width:100%; height:1.18em; overflow:visible; }
 .i-mark ellipse, .i-mark polygon{ fill: var(--accent); }
 .i-mark line{ stroke: var(--accent); stroke-width:1.6; stroke-linecap:round; }
+
+.megaphone-mark{ display:inline-block; width:0.9em; vertical-align:-0.12em; margin-left:0.28em; }
+.megaphone-mark svg{ display:block; width:100%; height:auto; overflow:visible; }
+.megaphone-mark polygon, .megaphone-mark rect{ fill: var(--accent); }
+.megaphone-mark path{ stroke: var(--accent); fill:none; stroke-width:1.8; stroke-linecap:round; }
 .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .contact-block{ text-align:right; font-family:"IBM Plex Mono",monospace; font-size:0.82rem; color: var(--ink-soft); line-height:1.9; }
 .contact-block a{ color: var(--ink-soft); text-decoration:none; }
