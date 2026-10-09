@@ -2,13 +2,14 @@
 
 This is the simplest way to publish a new post yourself, using only your web browser — no install, no terminal.
 
-There are 3 topics on the blog, each with its own folder:
+There are 4 topics on the blog, each with its own folder:
 
 | Topic | Folder |
 |---|---|
 | Integrating AI Into Real Workflows | `blog/integrating-ai-workflows/` |
 | Pricing AI the Way You'd Price Risk | `blog/pricing-ai-vs-risk/` |
 | What I'm Learning About AI, and Why | `blog/learning-ai/` |
+| Rumination | `blog/rumination/` |
 
 Adding a post means **3 edits** on GitHub.com. Do them in this order.
 
